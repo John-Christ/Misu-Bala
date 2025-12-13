@@ -73,15 +73,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const imagePayload = base64Image.split(',')[1]; 
         const mimeType = 'image/jpeg'; 
 
-        // 5. Définition du Prompt pour Gemini
+        // 5. Définition du Prompt pour Gemini (INTÈGRE LES INSTRUCTIONS SYSTÈME)
         
-        const fullPrompt = `Tu es un nutritionniste IA professionnel pour une application de santé appelée Misu Bala Alimentation. 
-            Analyse cette photo d'aliment ou de code barre. Ta réponse doit être uniquement en HTML pour l'affichage web, en utilisant des balises comme <h3>, <ul>, et des tags **forts** pour l'emphase.
-
+        const fullPrompt = `Tu es un nutritionniste IA professionnel pour une application de santé appelée Misu Bala Alimentation. Ta réponse doit être UNIQUEMENT en HTML pour l'affichage web, formatée avec des titres, listes et mises en gras. Agis comme un assistant d'analyse alimentaire.
+            
+            Analyse cette photo d'aliment ou de code barre.
+            
             **Informations Demandées :**
             1.  **Composants Majaux :** Fournis les principaux composants nutritionnels (protéines, sucres, graisses, fibres, calories estimées).
             2.  **Toxicité :** Indique clairement s'il y a des substances potentiellement toxiques ou des additifs dangereux.
-            3.  **Prévention et Recommandations :** Donne des conseils spécifiques et précis pour un utilisateur avec la condition : **${userProfile.condition}**, et des allergies à : **${userProfile.allergies.join(', ')}**.`;
+            3.  **Prévention et Recommandations :** Donne des conseils spécifiques et précis pour un utilisateur avec la condition : **${userProfile.condition}**, et des allergies à : **${userProfile.allergies.join(', ')}**.
+            
+            Ta réponse doit être détaillée, factuelle et commencer directement par la balise <h3>.`;
 
         const requestBody = {
             contents: [{
@@ -90,12 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     { inlineData: { data: imagePayload, mimeType: mimeType } },
                     { text: fullPrompt }
                 ]
-            }],
-            config: {
-                model: "gemini-2.5-flash", 
-                temperature: 0.2,
-                systemInstruction: "Tu es un assistant d'analyse alimentaire. Ta réponse doit être uniquement en HTML."
-            }
+            }]
+            // ❌ L'objet 'config' (et son contenu) EST SUPPRIMÉ ici pour corriger l'erreur ❌
         };
 
         try {
@@ -117,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 displayResults(geminiResult, `Conseils basés sur un profil : ${userProfile.condition}. Consultez un professionnel de la santé.`);
                 
             } else if (data.error) {
+                // Afficher le message d'erreur s'il est présent
                 displayError(`Erreur API : ${data.error.message}`);
             } else {
                 displayError('Analyse terminée, mais aucune donnée exploitable reçue. Le modèle a pu bloquer la réponse.');
