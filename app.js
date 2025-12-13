@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Envoyer l'image Base64 directement à l'API Gemini
     async function sendToGemini(base64Image) {
-        if (!GEMINI_API_KEY || GEMINI_API_KEY === "VOTRE_CLÉ_API_GEMINI_ICI") {
+        if (!GEMINI_API_KEY || GEMINI_API_KEY === "AIzaSyDgy-DWOj_9JjF9Cly7Njt4k7k9N6XuTKI") {
             displayError('Erreur: Veuillez insérer votre clé API Gemini dans le fichier app.js.');
             return;
         }
