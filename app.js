@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 🚨 1. Configuration (ATTENTION SÉCURITÉ !)
     // Pour une application PRO, cette clé DOIT être sur un serveur backend.
-    const GEMINI_API_KEY = "AIzaSyBPArIqM7bpNRqqXuTDGnrVpyIPLE7ot-I"; 
+    const GEMINI_API_KEY = "AIzaSyCuktHbuuBuDOjmyxNS3r5ZrjoRSL_QnLg"; 
 
     // 2. Références DOM
     const imageInput = document.getElementById('image-input');
