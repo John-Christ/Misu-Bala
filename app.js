@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 🚨 1. Configuration (ATTENTION SÉCURITÉ !)
     // Pour une application PRO, cette clé DOIT être sur un serveur backend.
-    const GEMINI_API_KEY = "AIzaSyBPArIqM7bpNRqqXuTDGnrVpyIPLE7ot-I"; 
+    const GEMINI_API_KEY = "AIzaSyC-6Q12bvwoZJVt_S5VUYDJXF3sDvWEvfM"; 
 
     // 2. Références DOM
     const imageInput = document.getElementById('image-input');
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Envoyer l'image Base64 directement à l'API Gemini
     async function sendToGemini(base64Image) {
         if (!GEMINI_API_KEY || GEMINI_API_KEY === "VOTRE_CLÉ_API_GEMINI_ICI") {
-            displayError('Erreur: Veuillez insérer votre clé API Gemini dans le fichier app.js.');
+            displayError('Erreur: Veuillez insérer votre clé  dans le fichier py');
             return;
         }
         
