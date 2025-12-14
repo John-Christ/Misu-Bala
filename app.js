@@ -1,10 +1,21 @@
 // app.js (NOUVELLE VERSION SÉCURISÉE)
+document.addEventListener('DOMContentLoaded', () => {
+    const imageInput = document.getElementById('image-input');
+    const scanButton = document.getElementById('scan-button');
+
+    // Assurez-vous que le bouton visible déclenche le clic sur le champ de fichier masqué
+    scanButton.addEventListener('click', () => {
+        imageInput.click(); // <--- CECI DOIT SE DÉCLENCHER
+    });
+
 
 // 🚨 1. Configuration - LA CLÉ API N'EST PLUS ICI !
 // REMPLACEZ PAR L'URL DE DÉPLOIEMENT DE VOTRE WEB APP GAS
 const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbznV3yxWyzzQS540r-68lHlYGcM_dT2TSByv8OxvwYMOH5RchxD_dBwaEop04QEqBgGdw/exec"; 
 
 // ... (constantes et événements inchangés)
+
+
 
 // Envoyer l'image Base64 au BACKEND GAS
 async function sendToGemini(base64Image) {
@@ -62,3 +73,6 @@ async function sendToGemini(base64Image) {
     } 
 }
 // ... (displayResults et displayError inchangés)
+
+
+   }); 
