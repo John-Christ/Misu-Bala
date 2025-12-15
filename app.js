@@ -2,7 +2,7 @@
 
 // 🚨 1. Configuration - REMPLACEZ PAR VOTRE VRAIE URL GAS
 // Si vous lisez ceci, mettez ici l'URL de déploiement de votre Web App GAS
-const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbznV3yxWyzzQS540r-68lHlYGcM_dT2TSByv8OxvwYMOH5RchxD_dBwaEop04QEqBgGdw/exec";
+const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz_OicBu7Zd92L799N7yorv-bdK7kizJEQmG6H0UvH_QrXpAS87wT7jotfpNh_Mnid9Iw/exec";
 
 
 document.addEventListener('DOMContentLoaded', () => {
