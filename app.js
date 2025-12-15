@@ -24,7 +24,7 @@ async function sendToGemini(base64Image) {
         return;
     }
     
-    resultsContent.innerHTML = '<h3>🌽🌽 Analyse en cours par Misu Bala...</h3>';
+    resultsContent.innerHTML = '<h3> Analyse en cours par Misu Bala...</h3>';
 
     // Supprimer le préfixe Base64 pour le rendre plus propre à envoyer
     const imagePayload = base64Image.split(',')[1]; 
