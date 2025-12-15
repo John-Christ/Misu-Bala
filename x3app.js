@@ -5,6 +5,7 @@
 const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbznV3yxWyzzQS540r-68lHlYGcM_dT2TSByv8OxvwYMOH5RchxD_dBwaEop04QEqBgGdw/exec";
 
 
+
 document.addEventListener('DOMContentLoaded', () => {
     // 2. Définition des éléments du DOM
     const imageInput = document.getElementById('image-input');
