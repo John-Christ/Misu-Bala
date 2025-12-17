@@ -2,49 +2,34 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Misu Bala Alimentation - Scanner IA</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Misu Bala AI - Analyseur</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden; /* Empêche le double défilement */
+            background-color: #0a0e14; /* Couleur de fond de votre app GAS */
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <h1>Misu Bala Alimentation</h1>
-        <p>Analyse alimentaire instantanée par IA (Gemini)</p>
-    </header>
+    <iframe 
+        src="https://script.google.com/macros/s/AKfycbznV3yxWyzzQS540r-68lHlYGcM_dT2TSByv8OxvwYMOH5RchxD_dBwaEop04QEqBgGdw/exec" 
+        allow="camera; microphone; geolocation" 
+        id="misu-bala-app">
+    </iframe>
 
-    <main>
-        <section id="scanner-section">
-            <h2>Analyser un Aliment ou un QR Code</h2>
-            
-            <input type="file" 
-                   accept="image/*" 
-                   capture="camera" 
-                   id="image-input" 
-                   style="display: none;"> 
-            
-            <button id="scan-button">
-                📷 Prendre une Photo / Scanner
-            </button>
-            
-            <img id="preview" src="" alt="Aperçu de l'image" style="max-width: 100%; display: none; margin-top: 15px;">
-            <p id="loading-text" style="color: blue; display: none;">Analyse en cours par l'IA...</p>
-        </section>
-
-        <section id="results-section" style="margin-top: 30px; border-top: 1px solid #ccc; padding-top: 20px;">
-            <h2>🔬 Résultats de l'Analyse</h2>
-            <div id="results-content">
-                <p>Vos résultats (composants, toxicité, recommandations) s'afficheront ici après le scan.</p>
-            </div>
-            
-            <div id="prevention-note" style="background-color: #ffe0b2; padding: 15px; border-radius: 5px; margin-top: 20px; display: none;">
-                <h3>⚠️ Note de Prévention (Diabète/Maladies)</h3>
-                <p id="prevention-text">L'IA fournira ici des conseils spécifiques basés sur votre profil de santé.</p>
-            </div>
-        </section>
-        
-    </main>
-
-    <script src="app.js"></script>
 </body>
 </html>
